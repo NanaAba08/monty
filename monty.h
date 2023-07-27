@@ -5,7 +5,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
+#include <string.h>
+#include <stdbool.h>
 
+#define BUFFER_SIZE 1024
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -57,5 +60,6 @@ void pall(stack_t **stack, unsigned int line_number, int value);
 void free_stack(stack_t *stack);
 void handle_error(const char *message, stack_t *stack, FILE *file);
 unsigned int get_line_number(stack_t *stack, FILE *file);
-
-#endif
+int main(int argc, char *argv[]);
+void print_error(unsigned int line_number, const char *message, const char *extra);
+void execute_instruction(char *content, stack_t **stack, unsigned int counter, FILE *file);

@@ -1,5 +1,5 @@
 #include "monty.h"
-#include <stdio.h>
+
 
 /**
   * main - Entry point
@@ -11,13 +11,20 @@ bus_t bus = {NULL, NULL, NULL, 0};
 
 int main(int argc, char *argv[])
 {
+	FILE *file;
+	char *content = NULL;
+	size_t size = 0;
+	ssize_t read_input;
+	stack_t *stack = NULL;
+	unsigned int counter = 0;
+	bus.file = file;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
 
-	FILE *file;
 	file = fopen(argv[1], "r");
 
 	if (!file)
@@ -26,22 +33,14 @@ int main(int argc, char *argv[])
 		return (EXIT_FAILURE);
 	}
 
-	bus.file = file;
-	char *content = NULL;
-	size_t size = 0;
-	ssize_t read_line;
-
-	stack_t *stack = NULL;
-	unsigned int counter = 0;
-
-	while ((read_line = getline(&content, &size, file)) != -1)
+	while ((read_input = getline(&content, &size, file)) != -1)
 	{
 		bus.content = content;
 		counter++;
 
-		if (read_line > 0)
+		if (read_input > 0)
 		{
-			execute(content, &stack, counter, file);
+			execute_opcode(content, &stack, counter, file);
 		}
 
 		free(content);
