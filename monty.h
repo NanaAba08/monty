@@ -36,4 +36,26 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+  * struct bus_s - function to hold information
+  * @arg: Pointer to the array that holds an argument
+  * @file: Pointer to the FILE
+  * @content: Pointer to a character array content
+  * @lifi: Integer variable to store a value
+  * Description: opcode and its function
+  */
+typedef struct bus_s
+{
+	char *arg;
+	FILE *file;
+	char *content;
+	int lifi;
+} bus_t;
+
+void push(stack_t **stack, unsigned int line_number, int value);
+void pall(stack_t **stack, unsigned int line_number, int value);
+void free_stack(stack_t *stack);
+void handle_error(const char *message, stack_t *stack, FILE *file);
+unsigned int get_line_number(stack_t *stack, FILE *file);
+
 #endif
