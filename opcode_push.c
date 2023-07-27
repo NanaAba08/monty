@@ -22,39 +22,6 @@ void push(stack_t **stack, unsigned int line_number, int value)
 
 
 
-
-// Function to print all the elements in the stack
-void pall(stack_t **stack, unsigned int line_number, int value)
- {
-    (void)value; // Unused parameter
-
-    stack_t *current = *stack;
-
-    while (current != NULL)
- {
-        printf("%d\n", current->n);
-        current = current->next;
-    }
-}
-
-
-
-
-
-// Function to free the stack nodes
-void free_stack(stack_t *stack)
- {
-    while (stack != NULL) 
-{
-        stack_t *temp = stack;
-        stack = stack->next;
-        free(temp);
-    }
-}
-
-
-
-
 void handle_error(const char *message, stack_t *stack, FILE *file) {
     fprintf(stderr, "L%d: %s\n", get_line_number(stack, file), message);
     free_stack(stack);
