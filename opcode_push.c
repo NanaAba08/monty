@@ -1,6 +1,6 @@
 #include "monty.h"
 
-// Function to push an element onto the stack
+/* unction to push an element onto the stack*/
 void push(stack_t **stack, unsigned int line_number, int value) 
 {
     stack_t *new_node = malloc(sizeof(stack_t));
@@ -33,7 +33,7 @@ void handle_error(const char *message, stack_t *stack, FILE *file) {
 
 
 
-// Helper function to get the line number based on the file position
+/* Helper function to get the line number based on the file position*/
 unsigned int get_line_number(stack_t *stack, FILE *file) {
     int line_number = 0;
     char input[100];

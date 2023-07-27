@@ -63,3 +63,5 @@ unsigned int get_line_number(stack_t *stack, FILE *file);
 int main(int argc, char *argv[]);
 void print_error(unsigned int line_number, const char *message, const char *extra);
 void execute_instruction(char *content, stack_t **stack, unsigned int counter, FILE *file);
+
+#endif
