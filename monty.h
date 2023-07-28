@@ -7,6 +7,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdbool.h>
+#include <sys/types.h>
 
 #define BUFFER_SIZE 1024
 /**
