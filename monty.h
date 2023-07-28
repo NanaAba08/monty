@@ -67,5 +67,6 @@ void print_error(unsigned int line_number, const char *message, const char *extr
 void execute_opcode(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 #endif

@@ -15,6 +15,7 @@ void execute_opcode(char *content, stack_t **stack, unsigned int counter, FILE *
        	{"pall", pall},
 	{"pint", pint},
 	{"pop", pop},
+	{"swap", swap},
 	
 	{NULL, NULL}
     };
