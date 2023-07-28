@@ -1,17 +1,15 @@
 #include "monty.h"
 
 /**
-  * pall - A function that prints all the elements in the stack
+  * pall - prints all the elements in the stack
   * @stack: Stack
-  * @value: value of integer
+  * @line_number: no used
   * Return: Null
   */
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;
 	(void)line_number;
-
-	
 
 	while (current != NULL)
 	{
