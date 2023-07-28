@@ -13,7 +13,7 @@ void pint(stack_t **stack, unsigned int line_number)
 
 	if (top == NULL)
 	{
-		handle_error("can't pint, stack empty", *stack, bus.file);
+		handle_error(line_number, "can't pint, stack empty", *stack, bus.file);
 	}
 	printf("%d\n", top->n);
 }
