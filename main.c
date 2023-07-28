@@ -1,5 +1,6 @@
 #include "monty.h"
-
+#define _GNU_SOURCE
+#include <stdio.h>
 
 /**
   * main - Entry point
@@ -17,7 +18,7 @@ int main(int argc, char *argv[])
 	ssize_t read_input;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
-	bus.file = file;
+	
 
 	if (argc != 2)
 	{
@@ -26,6 +27,7 @@ int main(int argc, char *argv[])
 	}
 
 	file = fopen(argv[1], "r");
+	bus.file = file;
 
 	if (!file)
 	{

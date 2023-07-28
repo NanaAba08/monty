@@ -6,13 +6,12 @@
   * @value: value of integer
   * Return: Null
   */
-void pall(stack_t **stack, unsigned int line_number, int value)
+void pall(stack_t **stack, unsigned int line_number)
 {
-	(void)value;
+	stack_t *current = *stack;
 	(void)line_number;
 
-	stack_t *current;
-	*current = *stack;
+	
 
 	while (current != NULL)
 	{

@@ -1,8 +1,9 @@
 #include "monty.h"
 
 /* unction to push an element onto the stack*/
-void push(stack_t **stack, unsigned int line_number, int value) 
+void push(stack_t **stack, unsigned int line_number) 
 {
+	int value = 0;
     stack_t *new_node = malloc(sizeof(stack_t));
     if (!new_node)
  {

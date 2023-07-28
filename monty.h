@@ -54,14 +54,15 @@ typedef struct bus_s
 	char *content;
 	int lifi;
 } bus_t;
+extern bus_t bus;
 
-void push(stack_t **stack, unsigned int line_number, int value);
-void pall(stack_t **stack, unsigned int line_number, int value);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 void handle_error(const char *message, stack_t *stack, FILE *file);
 unsigned int get_line_number(stack_t *stack, FILE *file);
 int main(int argc, char *argv[]);
 void print_error(unsigned int line_number, const char *message, const char *extra);
-void execute_instruction(char *content, stack_t **stack, unsigned int counter, FILE *file);
+void execute_opcode(char *content, stack_t **stack, unsigned int counter, FILE *file);
 
 #endif
