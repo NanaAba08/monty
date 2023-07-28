@@ -13,7 +13,7 @@ void execute_opcode(char *content, stack_t **stack, unsigned int counter, FILE *
     instruction_t opst[] = {
         {"push", push},
        	{"pall", pall},
-
+	{"pint", pint},
    {NULL, NULL}
     };
 
