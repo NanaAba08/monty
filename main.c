@@ -10,14 +10,12 @@ bus_t bus = {NULL, NULL, NULL, 0};
 
 int main(int argc, char *argv[])
 {
-	FILE *file;
-
-	bus.file = file;
-	char content[1024];
+	FILE *file = NULL;
+	char content[1024], *token;
 	size_t size = sizeof(content);
-	ssize_t read_line;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
+	bus.file = file;
 
 	if (argc != 2 || !(file = fopen(argv[1], "r")))
 	{
@@ -31,7 +29,7 @@ int main(int argc, char *argv[])
 		if ((token = strtok(content, " \t\n")) && token[0] != '#')
 		{
 			bus.content = token;
-			execute_instruction(bus.content, &stack, counter, file);
+			execute_opcode(bus.content, &stack, counter, file);
 		}
 	}
 
